@@ -1,46 +1,43 @@
-[![](https://travis-ci.org/esdoc/esdoc-plugins.svg?branch=master)](https://travis-ci.org/esdoc/esdoc-plugins)
-# ESDoc Plugins
+# ESDoc Brand Plugin
+## Install
+```bash
+npm install esdoc-brand-plugin
+```
 
-This repository is official plugins for ESDoc.
+## Config
+This plugin takes a title and a repository from `package.json (name, repsitory)`.
+```json
+{
+  "source": "./src",
+  "destination": "./doc",
+  "package.json": "./package.json",
+  "plugins": [
+    {
+      "name": "esdoc-brand-plugin",
+      "option": {
+        "logo": "./logo.png",
+        "title": "My Library",
+        "description": "this is awesome library",
+        "repository": "https://github.com/foo/bar",
+        "site": "http://my-library.org",
+        "author": "https://twitter.com/foo",
+        "image": "http://my-library.org/logo.png"
+      }
+    }
+  ]
+}
+```
 
-**In most case, we recommend [esdoc-standard-plugin](./esdoc-standard-plugin)**
+- `logo` default is `null`
+- `title` default is `name` of `package.json`
+- `description` default is `description` of `package.json`
+- `repository` default is `repository` of `package.json`
+- `site` default is `homepage` of `package.json`
+- `author` default is `author` of `package.json`
+- `image` default is `null`. support an aspect ratio of 1:1
 
-## Each Plugins
+## LICENSE
+MIT
 
-**Publisher**
-- [esdoc-publish-html-plugin](./esdoc-publish-html-plugin)
-- [esdoc-publish-markdown-plugin](./esdoc-publish-markdown-plugin) [PoC]
-
-**Integration**
-- [esdoc-integrate-manual-plugin](./esdoc-integrate-manual-plugin)
-- [esdoc-integrate-test-plugin](./esdoc-integrate-test-plugin)
-
-**Transform**
-- [esdoc-accessor-plugin](./esdoc-accessor-plugin)
-- [esdoc-brand-plugin](./esdoc-brand-plugin)
-- [esdoc-exclude-source-plugin](./esdoc-exclude-source-plugin)
-- [esdoc-importpath-plugin](./esdoc-importpath-plugin)
-- [esdoc-inject-script-plugin](./esdoc-inject-script-plugin)
-- [esdoc-inject-style-plugin](./esdoc-inject-style-plugin)
-- [esdoc-undocumented-identifier-plugin](./esdoc-undocumented-identifier-plugin)
-- [esdoc-unexported-identifier-plugin](./esdoc-unexported-identifier-plugin)
-
-**Inspection**
-- [esdoc-coverage-plugin](./esdoc-coverage-plugin)
-- [esdoc-lint-plugin](./esdoc-lint-plugin)
-- [esdoc-type-inference-plugin](./esdoc-type-inference-plugin) 
-
-**External Identifier**
-- [esdoc-external-ecmascript-plugin](./esdoc-external-ecmascript-plugin)
-- [esdoc-external-nodejs-plugin](./esdoc-external-nodejs-plugin)
-- [esdoc-external-webapi-plugin](./esdoc-external-webapi-plugin)
-
-**Language**
-- [esdoc-ecmascript-proposal-plugin](./esdoc-ecmascript-proposal-plugin)
-- [esdoc-flow-type-plugin](./esdoc-flow-type-plugin) [PoC]
-- [esdoc-typescript-plugin](./esdoc-typescript-plugin) [PoC]
-
-**React**
-- [esdoc-jsx-plugin](./esdoc-jsx-plugin)
-- [esdoc-react-plugin](./esdoc-react-plugin) [PoC]
-
+## Author
+[Ryo Maruyama@h13i32maru](https://github.com/h13i32maru)
